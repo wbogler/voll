@@ -1,0 +1,15 @@
+{
+    "nome":"Willian Silva",
+    "email": "williansilva@voll.com",
+    "crm": "123456",
+    "especialidade":"ORTOPEDIA",
+    "endereco":{
+        "logradouro":"Rua manes",
+        "bairro":"lontra",
+        "cep":"85855555",
+        "cidade":"Bruxelas",
+        "uf":"SP",
+        "numero":"1",
+        "complemento": "complemento"
+    }
+}
