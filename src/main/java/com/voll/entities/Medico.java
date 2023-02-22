@@ -1,6 +1,7 @@
 package com.voll.entities;
 
 import com.voll.enums.Especialidade;
+import com.voll.records.DadosCadastroMedico;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -16,14 +17,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name = "medico")
-@Entity(name = "medico")
+@Table(name = "medicos")
+@Entity(name = "Medico")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 @EqualsAndHashCode(of = "id")
 public class Medico {
+
+	public Medico(DadosCadastroMedico dados) {
+		this.nome = dados.nome();
+		this.email = dados.email();
+		this.crm = dados.crm();
+		this.especialidade = dados.especialidade();
+		this.endereco = new Endereco(dados.endereco());
+	}
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

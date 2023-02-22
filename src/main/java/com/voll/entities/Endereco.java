@@ -1,5 +1,7 @@
 package com.voll.entities;
 
+import com.voll.records.DadosEndereco;
+
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,6 +15,17 @@ import lombok.Setter;
 @Getter
 
 public class Endereco {
+	
+	public Endereco(DadosEndereco endereco) {
+		this.logradouro = endereco.logradouro();
+		this.bairro = endereco.bairro();
+		this.cep = endereco.cep();
+		this.numero = endereco.numero();
+		this.complemento = endereco.complemento();
+		this.cidade = endereco.cidade();
+		this.uf = endereco.uf();
+	}
+	
 	
 	private String logradouro;
 	private String bairro;
