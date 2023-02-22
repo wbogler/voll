@@ -11,6 +11,8 @@ import com.voll.entities.Medico;
 import com.voll.records.DadosCadastroMedico;
 import com.voll.services.MedicoService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("medicos")
 public class MedicoController {
@@ -19,7 +21,7 @@ public class MedicoController {
 	private MedicoService medicoService;
 	
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Medico> cadastrar(@RequestBody DadosCadastroMedico dados) {
+	public ResponseEntity<Medico> cadastrar(@RequestBody @Valid DadosCadastroMedico dados) {
 		return ResponseEntity.ok(medicoService.saveNewMedico(dados));
 	}
 
