@@ -62,4 +62,15 @@ public class MedicoService {
 		return medicoRepository.getReferenceById(id);
 	}
 	
+	@Transactional
+	public String desativarMedico(Long id) {
+		try {
+			var medico = medicoRepository.getReferenceById(id);
+			medico.setAtivo(false);
+			return "desativado";
+		} catch (Exception e) {
+			return "não desativado";
+		}
+
+	}
 }
