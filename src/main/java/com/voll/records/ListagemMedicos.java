@@ -4,6 +4,7 @@ import com.voll.entities.Medico;
 import com.voll.enums.Especialidade;
 
 public record ListagemMedicos(
+								Long id,
 								String nome,
 								String email, 
 								String crm, 
@@ -11,7 +12,7 @@ public record ListagemMedicos(
 		) {
 	
 	public ListagemMedicos(Medico medico) {
-		this(medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getEspecialidade());
+		this(medico.getId(),medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getEspecialidade());
 	}
 	
 }
