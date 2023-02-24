@@ -7,6 +7,7 @@ import com.voll.entities.Endereco;
 import com.voll.entities.Medico;
 import com.voll.records.AtualizarMedico;
 import com.voll.records.DadosCadastroMedico;
+import com.voll.records.MedicoAtualizado;
 import com.voll.repositories.Medicorepository;
 
 import jakarta.transaction.Transactional;
@@ -58,8 +59,9 @@ public class MedicoService {
 		}
 	}
 
-	public Medico getById(Long id) {
-		return medicoRepository.getReferenceById(id);
+	public MedicoAtualizado getById(Long id) {
+		var medico = medicoRepository.getReferenceById(id);
+		return new MedicoAtualizado(medico);
 	}
 	
 	@Transactional
