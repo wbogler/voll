@@ -45,8 +45,13 @@ public class MedicoController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<MedicoAtualizado> detalharMedicoporId(@RequestParam Long id){
-		var medico = medicoService.getById(id);
-		return ResponseEntity.ok(medico);
+		try {
+			var medico = medicoService.getById(id);
+			return ResponseEntity.ok(medico);
+		} catch (Exception e) {
+			return ResponseEntity.notFound().build();
+		}
+
 	}
 	
 	@GetMapping("/listar")
