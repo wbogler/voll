@@ -7,6 +7,6 @@ import com.voll.entities.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-	UserDetails findByEmail(String username);
+	UserDetails findByLogin(String username);
 
 }
